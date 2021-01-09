@@ -23,6 +23,8 @@ jobs:
       - name: API Test
         working-directory: tests
         run: npm run ci
-      - name: E2e Test
+      - name: E2E Test
         working-directory: tests
+        env:
+          HEADLESS: true
         run: npm run ci:e2e
