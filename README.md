@@ -2,7 +2,7 @@
 
 ## 과제 목표
 
-https://user-images.githubusercontent.com/14071105/104095825-535fc480-52dc-11eb-81b5-762b566b34d8.mov
+![demo](https://user-images.githubusercontent.com/14071105/104095988-3bd50b80-52dd-11eb-96df-31faee9db389.gif)
 
 Spring Web 이용해서 ToDo REST API를 만들어봅니다.
 
