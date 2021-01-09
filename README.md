@@ -27,10 +27,18 @@
 - 모든 API 테스트를 통과해야 합니다.
 - 모든 E2E 테스트를 통과해야 합니다.
 
-## 실행하기
+## API 실행하기
 
 ```bash
 ./gradlew run
+```
+
+## Web 실행하기
+
+```bash
+cd web
+npm install
+npm run dev
 ```
 
 ## 테스트
