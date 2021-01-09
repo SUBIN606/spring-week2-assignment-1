@@ -6,9 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: tests
     steps:
       - uses: actions/checkout@v2
       - name: Setup Java JDK
@@ -21,8 +18,11 @@ jobs:
         working-directory: web
         run: npm ci
       - name: Test install
+        working-directory: tests
         run: npm ci
       - name: API Test
+        working-directory: tests
         run: npm run ci
       - name: E2e Test
+        working-directory: tests
         run: npm run ci:e2e
