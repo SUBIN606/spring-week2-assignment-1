@@ -71,7 +71,38 @@ describe('tasks', () => {
     });
   });
 
-  describe('PUT or PATCH /tasks/:id', () => {
+  describe('PUT /tasks/:id', () => {
+    let id;
+
+    context('with existing task id', () => {
+      beforeEach(async () => {
+        const res = await frisby.post('/tasks', { title });
+        const task = JSON.parse(res.body);
+        id = task.id;
+      });
+
+      it('responses updated task', async () => {
+        const res = await frisby.put(`/tasks/${id}`, { title: '밥 먹기' })
+          .expect('status', 200);
+        const task = JSON.parse(res.body);
+
+        expect(task.title).toBe('밥 먹기');
+      });
+    });
+
+    context('with not existing task id', () => {
+      beforeEach(async () => {
+        id = 0;
+      });
+
+      it('responses 404 Not Found error', async () => {
+        await frisby.put(`/tasks/${id}`, { title: '밥 먹기' })
+          .expect('status', 404);
+      });
+    });
+  });
+
+  describe('PATCH /tasks/:id', () => {
     let id;
 
     context('with existing task id', () => {
