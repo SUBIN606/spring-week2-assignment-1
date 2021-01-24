@@ -47,7 +47,7 @@ npm run dev
 
 ```bash
 $ cd tests
-$ npm run test
+$ npm install
 ```
 
 ### API 테스트 실행하기
